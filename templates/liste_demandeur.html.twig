@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% block title %}Liste demandeurs{% endblock %}
+
+{% block body %}
+
+                    <table class="table mt-5 table-bordered" style="border: 1px solid gray; font-family: Arial; font-weight: normal">
+                        <tr>
+                            <th style="background-color: white">Nom</th>
+                            <th style="background-color: white">Prénom</th>
+                            <th style="background-color: white">Email</th>
+                            <th style="background-color: white">Téléphone</th>
+                            <th style="background-color: white">Formation</th>
+                            <th style="background-color: white">Niveau Etude</th>
+                            <th style="background-color: white">Experience Professionnelle</th>
+                        </tr>
+                        {% for demandeur in demandeurs %}
+                            <tr>
+                                <td style="background-color: lightgray; font-size: 15px; font-family: Calibri">{{ demandeur.nom }}</td>
+                                <td style="background-color: lightgray; font-size: 15px; font-family: Calibri">{{ demandeur.prenom }}</td>
+                                <td style="background-color: lightgray; font-size: 15px; font-family: Calibri">{{ demandeur.email }}</td>
+                                <td style="background-color: lightgray; font-size: 15px; font-family: Calibri">{{ demandeur.telephone }}</td>
+                                <td style="background-color: lightgray; font-size: 15px; font-family: Calibri">{{ demandeur.formation }}</td>
+                                <td style="background-color: lightgray; font-size: 15px; font-family: Calibri">{{ demandeur.niveauEtude }}</td>
+                                <td style="background-color: lightgray; font-size: 15px; font-family: Calibri">{{ demandeur.experiencePro }}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+
+{% endblock %}

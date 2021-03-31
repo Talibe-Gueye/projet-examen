@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% block title %}Liste offres{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="card mt-5">
+            <div class="card-header" style="background-color: #0d6efd; color: white; text-align: center; font-weight: bold; font-size: 25px">Liste des offres</div>
+            <div class="card-body" style="font-size: 15px; color: #5c636a">
+                    <table class="table table-info">
+                        <tr>
+                            <th style="background-color: white">Nom de l'entreprise</th>
+                            <th style="background-color: white">Domaine d'expertise</th>
+                            <th style="background-color: white">Profil recherché</th>
+                        </tr>
+                        {% for offre in offres %}
+                            <tr>
+                                <td>{{ offre.nomEntreprise }}</td>
+                                <td>{{ offre.domaine }}</td>
+                                <td>{{ offre.profilRecherche}}</td>
+                                <td>
+                                    <a href="{{ path('app_postuler') }}" class="btn btn-outline-primary">postuler</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+
+    </div>
+
+{% endblock %}
